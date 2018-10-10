@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Home
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+
+  <ion-fab bottom right>
+    <button ion-fab>
+      <ion-icon name="add" (click)="createPosts()"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
