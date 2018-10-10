@@ -13,8 +13,12 @@
 
 </ion-header>
 <ion-content padding>
-
-
+  <ion-list>
+    <ion-item *ngFor="let f of feeds">
+      <h2>{{f.titulo}}</h2>
+      <p>{{f.postagem}}</p>
+    </ion-item>
+  </ion-list>
   <ion-fab bottom right>
     <button ion-fab>
       <ion-icon name="add" (click)="createPosts()"></ion-icon>

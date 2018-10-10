@@ -20,6 +20,8 @@ export class HomePage {
   post: any;
   user_id: any;
   loading: any;
+  feeds: any;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -47,7 +49,11 @@ export class HomePage {
         let access_token = res.access_token;
 
         let facebookString =
-          this.user_id + "/feed/?fields=id" + "&method=post" + "&link=" + this.link;
+          this.user_id +
+          "/feed/?fields=id" +
+          "&method=post" +
+          "&link=" +
+          this.link;
         if (
           this.post.facebook_message != null &&
           this.post.facebook_message != ""
@@ -59,6 +65,7 @@ export class HomePage {
         this.fb
           .api(facebookString, ["manage_pages", "publish_pages"])
           .then(res => {
+            this.feeds = res;
             this.loading.dismissAll();
           })
           .catch(e => {
